@@ -1,0 +1,22 @@
+---
+export function getStaticPaths() {
+  return [
+    { params: { silo: 'demo-silo', slug: 'demo-post' } }
+  ];
+}
+const { silo, slug } = Astro.params;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{silo} - {slug}</title>
+	</head>
+	<body>
+		<h1>Silo: {silo}</h1>
+		<h2>Slug: {slug}</h2>
+	</body>
+</html>
