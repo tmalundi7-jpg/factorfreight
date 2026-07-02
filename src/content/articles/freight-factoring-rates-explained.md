@@ -2,7 +2,7 @@
 title: "freight factoring rates explained - FactorFreight"
 description: "Learn freight factoring rates explained to improve your cash flow. Discover key factors and step-by-step guides."
 silo: "Rates & Cost Structures"
-pubDate: "2026-07-02T03:50:37.417Z"
+pubDate: "2026-07-02T12:11:20.573Z"
 ---
 
 *Last Updated and Fact-Checked: July 2026*

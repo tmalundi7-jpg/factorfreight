@@ -2,7 +2,7 @@
 title: "What Is A Good Factoring Rate For New Authority - FactorFreight"
 description: "Learn what is a good factoring rate for new authority to improve your cash flow. Discover key factors, step-by-step guides, and answers to common questions about freight factoring."
 silo: "Rates & Cost Structures"
-pubDate: "2026-07-02T03:50:37.464Z"
+pubDate: "2026-07-02T12:11:20.622Z"
 ---
 
 *Last Updated and Fact-Checked: July 2026*

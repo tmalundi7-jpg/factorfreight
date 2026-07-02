@@ -2,7 +2,7 @@
 title: "Flat Fee Vs Variable Rate Factoring For Trucking - FactorFre"
 description: "Learn flat fee vs variable rate factoring for trucking to improve your cash flow. Discover key factors, step-by-step guides, and answers to common questions about freight factoring."
 silo: "Rates & Cost Structures"
-pubDate: "2026-07-02T03:50:37.512Z"
+pubDate: "2026-07-02T12:11:20.662Z"
 ---
 
 *Last Updated and Fact-Checked: July 2026*
