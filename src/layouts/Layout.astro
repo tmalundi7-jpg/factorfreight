@@ -1,0 +1,69 @@
+---
+const { title, description } = Astro.props;
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description || "FactorFreight: AI Arbitrage"} />
+		<title>{title}</title>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+		<style is:global>
+			:root {
+				--bg-color: #0d1117;
+				--text-main: #c9d1d9;
+				--accent: #58a6ff;
+				--card-bg: rgba(22, 27, 34, 0.7);
+				--border-color: #30363d;
+			}
+			* { box-sizing: border-box; }
+			body {
+				margin: 0;
+				font-family: 'Inter', sans-serif;
+				background-color: var(--bg-color);
+				color: var(--text-main);
+				line-height: 1.6;
+			}
+			a { color: var(--accent); text-decoration: none; transition: opacity 0.2s ease; }
+			a:hover { opacity: 0.8; }
+			.container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+			header { border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem; margin-bottom: 3rem; text-align: center;}
+			h1, h2, h3, h4 { color: #ffffff; }
+			.glass-card {
+				background: var(--card-bg);
+				border: 1px solid var(--border-color);
+				border-radius: 12px;
+				padding: 1.5rem;
+				backdrop-filter: blur(10px);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+			.glass-card:hover {
+				transform: translateY(-3px);
+				box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+			}
+            article img { max-width: 100%; border-radius: 8px; }
+            article pre { background: #161b22; padding: 1rem; border-radius: 8px; overflow-x: auto; }
+            .cta-btn {
+                display: inline-block;
+                background: linear-gradient(135deg, #1f6feb, #388bfd);
+                color: #fff;
+                padding: 0.75rem 1.5rem;
+                border-radius: 8px;
+                font-weight: 600;
+                margin-top: 1rem;
+                box-shadow: 0 4px 12px rgba(31, 111, 235, 0.3);
+            }
+            .cta-btn:hover { opacity: 0.9; transform: scale(1.02); }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1 style="margin: 0; font-size: 2.5rem; background: linear-gradient(to right, #58a6ff, #79c0ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">FactorFreight</h1>
+				<p style="margin-top: 0.5rem; color: #8b949e;">Financial Insights for Owner-Operators</p>
+			</header>
+			<slot />
+		</div>
+	</body>
+</html>

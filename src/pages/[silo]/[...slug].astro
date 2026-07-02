@@ -1,22 +1,26 @@
 ---
-export function getStaticPaths() {
-  return [
-    { params: { silo: 'demo-silo', slug: 'demo-post' } }
-  ];
-}
-const { silo, slug } = Astro.params;
----
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{silo} - {slug}</title>
-	</head>
-	<body>
-		<h1>Silo: {silo}</h1>
-		<h2>Slug: {slug}</h2>
-	</body>
-</html>
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map(post => {
+    const siloSlug = post.data.silo ? post.data.silo.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-') : 'articles';
+    return {
+      params: { silo: siloSlug, slug: post.slug },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+<Layout title={post.data.title} description={post.data.description}>
+	<article class="glass-card" style="padding: 2.5rem; margin-bottom: 2rem;">
+		<Content />
+        <div style="margin-top: 3rem; text-align: center;">
+            <a href="#" class="cta-btn">Compare Factoring Rates Now</a>
+        </div>
+	</article>
+</Layout>

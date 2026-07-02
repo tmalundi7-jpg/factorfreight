@@ -1,16 +1,23 @@
 ---
----
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Home | AI Arbitrage Site</title>
-	</head>
-	<body>
-		<h1>AI Arbitrage Site</h1>
-        <p>Welcome to the auto-generated platform.</p>
-	</body>
-</html>
+const articles = await getCollection('articles');
+---
+<Layout title="FactorFreight | AI Arbitrage" description="Learn about freight factoring and finance.">
+	<section>
+		<h2 style="margin-bottom: 2rem;">Latest Insights</h2>
+		<div style="display: grid; gap: 1.5rem;">
+			{articles.map((post) => {
+                const siloSlug = post.data.silo ? post.data.silo.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-') : 'articles';
+                return (
+				<a href={`/${siloSlug}/${post.slug}`} style="text-decoration: none; color: inherit;">
+					<div class="glass-card">
+						<h3 style="margin: 0 0 0.5rem 0; color: var(--accent);">{post.data.title}</h3>
+						<p style="margin: 0; font-size: 0.95rem;">{post.data.description}</p>
+					</div>
+				</a>
+			)})}
+		</div>
+	</section>
+</Layout>
